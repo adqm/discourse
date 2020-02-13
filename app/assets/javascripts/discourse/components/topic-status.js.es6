@@ -40,7 +40,7 @@ export default Component.extend({
   @discourseComputed("topic.is_warning")
   topicWarning(warning) {
     return warning
-      ? this._set("warning", "envelope", "warning")
+      ? this._set("warning", "envelope", "warning", { class: "status-warning" })
       : this._reset("warning");
   },
 
@@ -63,6 +63,13 @@ export default Component.extend({
     return invisible
       ? this._set("invisible", "far-eye-slash", "unlisted")
       : this._reset("invisible");
+  },
+
+  @discourseComputed("topic.isPrivateMessage")
+  topicPM(isPM) {
+    return isPM
+      ? this._set("personal_message", "envelope", "personal_message")
+      : this._reset("personal_message");
   },
 
   _set(name, icon, key, iconArgs = null) {

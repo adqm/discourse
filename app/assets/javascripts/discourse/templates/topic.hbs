@@ -58,19 +58,6 @@
 
         {{else}}
           <h1 data-topic-id="{{unbound model.id}}">
-            {{#unless model.is_warning}}
-              {{#if siteSettings.enable_personal_messages}}
-                {{private-message-glyph
-                  isVisible=model.isPrivateMessage
-                  href=pmPath
-                  title="topic_statuses.personal_message.title"
-                  ariaLabel="user.messages.inbox"
-                }}
-              {{else}}
-                {{private-message-glyph isVisible=model.isPrivateMessage}}
-              {{/if}}
-            {{/unless}}
-
             {{#if model.details.loaded}}
               {{topic-status topic=model}}
               <a href="{{unbound model.url}}" {{action "jumpTop"}} class="fancy-title">

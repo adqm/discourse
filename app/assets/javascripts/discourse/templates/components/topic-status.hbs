@@ -1,3 +1,10 @@
+{{~#if topicPM~}}
+  {{~#if topicWarning~}}
+    <span class='topic-status' title={{warningTitle}}>{{warningIcon}}</span>
+  {{~else~}}
+    <span class='topic-status' title={{personal_messageTitle}}>{{personal_messageIcon}}</span>
+  {{~/if~}}
+{{~/if~}}
 {{~#if topicClosedArchived~}}
   <span class='topic-status' title={{closedArchivedTitle}}>{{closedArchivedIcon}}</span>
 {{~/if~}}
@@ -6,9 +13,6 @@
 {{~/if~}}
 {{~#if archivedIcon~}}
   <span class='topic-status' title={{archivedTitle}}>{{archivedIcon}}</span>
-{{~/if~}}
-{{~#if topicWarning~}}
-  <span class='topic-status' title={{warningTitle}}>{{warningIcon}}</span>
 {{~/if~}}
 {{~#if topicPinned~}}
   {{~#if canAct~}}
